@@ -1,0 +1,389 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #090b10;
+    --panel: #11151e;
+    --panel2: #171d29;
+    --text: #f3f5fa;
+    --muted: #929baa;
+    --accent: #ff7138;
+    --border: #252d3b;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span,
+h1 span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a,
+.back-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a:hover,
+.back-link:hover {
+    color: var(--accent);
+}
+
+.hero {
+    width: min(1100px, 88%);
+    margin: 110px auto 80px;
+    text-align: center;
+}
+
+.tag {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 82px);
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.hero > p,
+.training-page > p,
+.panel > p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 65px;
+    text-align: left;
+}
+
+.card {
+    min-height: 230px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background: var(--panel2);
+}
+
+.card-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: #292019;
+    color: var(--accent);
+    border-radius: 9px;
+    font-weight: 900;
+}
+
+.card h2 {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card-link {
+    display: block;
+    margin-top: 22px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+footer {
+    text-align: center;
+    color: #555e6d;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 30px;
+}
+
+.workspace {
+    width: min(1200px, 92%);
+    margin: 55px auto;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 25px;
+}
+
+.panel,
+.preview-panel,
+.training-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.panel h1 {
+    font-size: 39px;
+    letter-spacing: -2px;
+}
+
+.panel label,
+.training-card label {
+    display: block;
+    margin: 25px 0 10px;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+textarea,
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 14px;
+    color: white;
+    background: #090d14;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    font: inherit;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+    border-color: var(--accent);
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #111;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+.secondary {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    color: white;
+}
+
+.preview-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 560px;
+}
+
+.preview-heading {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#viewer {
+    flex: 1;
+    min-height: 420px;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: radial-gradient(circle at center, #202a3a, #090d14 75%);
+}
+
+#viewer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.status {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.upload-area {
+    display: flex;
+    min-height: 130px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px dashed #4b5668;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white !important;
+    margin: 20px 0 !important;
+}
+
+.upload-area span {
+    font-size: 30px;
+    color: var(--accent);
+}
+
+.upload-area small {
+    color: var(--muted);
+}
+
+.image-preview {
+    display: none;
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    background: #080b10;
+    border-radius: 8px;
+}
+
+.training-page {
+    width: min(650px, 90%);
+    margin: 75px auto;
+    text-align: center;
+}
+
+.training-page h1 {
+    font-size: 55px;
+}
+
+.training-card {
+    margin-top: 35px;
+    text-align: left;
+}
+
+.training-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.training-row span {
+    color: var(--muted);
+}
+
+.training-row strong {
+    color: var(--accent);
+}
+
+.progress-track {
+    height: 9px;
+    margin-top: 30px;
+    background: #252d3b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: var(--accent);
+    transition: width .3s;
+}
+
+#progressText {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin-top: 65px;
+    }
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+}
