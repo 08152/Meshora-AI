@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training | RISKY 3D AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="/">RISKY<span>3D</span> AI</a>
+        <nav>
+            <a href="/">START</a>
+            <a href="/text.html">TEXT TO 3D</a>
+        </nav>
+    </header>
+
+    <main class="training-page">
+        <div class="tag">MODEL DEVELOPMENT</div>
+        <h1>AI <span>TRAINING</span></h1>
+        <p>Trainiere das experimentelle Modell auf dem Server.</p>
+
+        <div class="training-card">
+            <div class="training-row">
+                <span>SERVERSTATUS</span>
+                <strong id="serverStatus">Wird geprüft ...</strong>
+            </div>
+
+            <div class="training-row">
+                <span>TRAININGSSTATUS</span>
+                <strong id="trainingStatus">Nicht gestartet</strong>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+
+            <div id="progressText">0 %</div>
+
+            <label for="epochs">TRAININGSDURCHLÄUFE</label>
+            <input id="epochs" type="number" min="1" max="1000" value="50">
+
+            <button id="startTraining">TRAINING STARTEN</button>
+            <p id="message" class="status">Bereit.</p>
+        </div>
+
+        <a class="back-link" href="/">← Zurück zur Startseite</a>
+    </main>
+
+    <script src="training.js"></script>
+</body>
+</html>
